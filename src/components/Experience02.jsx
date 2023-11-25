@@ -1,9 +1,9 @@
-import { useFrame } from "@react-three/fiber";
+
 import { OrbitControls } from "@react-three/drei";
-import { useRef } from "react";
 import { CuboidCollider, Physics, RigidBody } from "@react-three/rapier";
 import Cube from "./Cube";
 import LongCube from "./LongCube";
+import Hambuerger from "./Hamberger";
 export default function Experience02() {
   // const cube = useRef();
 
@@ -48,6 +48,13 @@ export default function Experience02() {
         </RigidBody>
         <Cube />
         <LongCube />
+        <Hambuerger />
+        <RigidBody type="fixed">
+          <CuboidCollider args={[5, 2, 0.5]} position={[0, 2, 5.25]} />
+          <CuboidCollider args={[5, 2, 0.5]} position={[0, 2, -5.25]} />
+          <CuboidCollider args={[0.5, 2, 5]} position={[5.5, 2, 0]} />
+          <CuboidCollider args={[0.5, 2, 5]} position={[-5.5, 2, 0]} />
+        </RigidBody>
       </Physics>
     </>
   );

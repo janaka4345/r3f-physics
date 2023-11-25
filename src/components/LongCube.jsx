@@ -13,10 +13,18 @@ export default function LongCube() {
     quortanionRotation.setFromEuler(eulerRotation);
     // console.log(cubeLong.current);
     cubeLong.current.setNextKinematicRotation(quortanionRotation);
+
+    const angle = time * 0.5;
+    cubeLong.current.setNextKinematicTranslation({
+      x: Math.cos(angle),
+      y: 0.5,
+      z: Math.sin(angle),
+    });
   });
 
   const handleCubeClick = (e) => {
-    console.log(cubeLong);
+    // cube.current.linvel({ x: 1.0, y: 3.0, z: 4.0 });
+    // console.log(cubeLong);
     // console.log(cube.current);
     //   cube.current.applyImpulse({ x: 0, y: 15, z: 0 });
     //   cube.current.applyTorqueImpulse({ x: 0, y: 11, z: 0 });
