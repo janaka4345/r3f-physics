@@ -1,4 +1,3 @@
-
 import { OrbitControls } from "@react-three/drei";
 import { CuboidCollider, Physics, RigidBody } from "@react-three/rapier";
 import Cube from "./Cube";
@@ -21,7 +20,7 @@ export default function Experience02() {
 
       <directionalLight castShadow position={[1, 2, 3]} intensity={1.5} />
       <ambientLight intensity={0.5} />
-      <Physics debug>
+      <Physics >
         <RigidBody colliders="ball">
           <mesh position={[-2, 8, 0]} castShadow>
             <sphereGeometry />
